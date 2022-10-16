@@ -15,6 +15,7 @@ class Person < ApplicationRecord
 	has_many :addresses, as: :addressable, inverse_of: :addressable, dependent: :destroy
 	has_many :contacts, dependent: :destroy
 	has_many :payments, dependent: :destroy
+	has_one :sepa_mandate, dependent: :destroy
 
 	# Liste alle Anmeldungen dieser Person auf (einschließlich Absagen, Warteliste etc)
 	has_many :registrations, -> { includes('event').order('events.start DESC') }, dependent: :destroy,
@@ -41,6 +42,7 @@ class Person < ApplicationRecord
 	accepts_nested_attributes_for :addresses, allow_destroy: true, reject_if: proc {|a| reject_blank_entries a}
 	accepts_nested_attributes_for :contacts, allow_destroy: true, reject_if: proc {|a| reject_blank_entries a}
 	accepts_nested_attributes_for :payments, allow_destroy: true, reject_if: proc {|a| reject_blank_entries a}
+	accepts_nested_attributes_for :sepa_mandate, allow_destroy: true, reject_if: proc {|a| reject_blank_entries a}
 
 	enum gender: {male: 1, female: 2, other: 3}
 

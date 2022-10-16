@@ -45,6 +45,9 @@ de:
       version:
         one: Version
         other: Versionen
+      sepa_mandate:
+        one: SEPA-Mandat
+        other: SEPA-Mandate
     attributes:
       person:
         account_name: Benutzername
@@ -114,7 +117,7 @@ de:
 
         member_discount: Mitgliedsermäßigung
         other_discounts: Sonstige Ermäßigungen
-        money_amount: Gezahlter Betrag
+        money_amount: Teilnahmebeitrag
         money_amount_short: Betrag
         money_transfer_date: Geldeingang
         payment_complete: Vollständig Bezahlt
@@ -164,6 +167,13 @@ de:
       session:
         account_name: Benutzername
         password: Passwort
+      sepa_mandate:
+        mandate_reference: Mandatsreferenz
+        signature_date: Datum der Unterschrift
+        iban: IBAN
+        bic: BIC
+        name_account_holder: Kontoinhaber
+        _destroy: Löschen
 
       group:
         title: Titel
